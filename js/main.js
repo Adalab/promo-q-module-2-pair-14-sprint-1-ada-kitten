@@ -91,7 +91,9 @@ if( cat1Description.includes(descrSearchText) ) {
  const icon= document.querySelector(".js-icon");
  event.preventDefault(icon); 
  icon.addEventListener( "click" , (event) => {
-  newForm.classList.remove("collapsed");
+ newForm.classList.remove("collapsed");
  } )
+ 
   
+
   

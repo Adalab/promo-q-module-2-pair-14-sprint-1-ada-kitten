@@ -88,12 +88,43 @@ if( cat1Description.includes(descrSearchText) ) {
   resultText.innerHTML = 'Prueba';
   //console.log("Prueba");
   }
+
+
  const icon= document.querySelector(".js-icon");
- event.preventDefault(icon); 
- icon.addEventListener( "click" , (event) => {
- newForm.classList.remove("collapsed");
- } )
  
+ icon.addEventListener( "click" , (event) => {
+  event.preventDefault(icon); 
+  newForm.classList.remove("collapsed");
+ } )
+
+
+const btnAdd = document.querySelector(".js-btn-add");
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMesageError = document.querySelector('.js-label-error');
+
+ btnAdd.addEventListener("click", (event)=> {
+  event.preventDefault(btnAdd);
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMesageError.innerHTML = "Debe rellenar todos los valores";
+  } else {
+    labelMesageError.innerHTML = "¡Muy bien!";
+  }
+
+ })
+
+const btnCancel = document.querySelector(".js-btn-cancel");
+
+btnCancel.addEventListener("click", (event)=>{
+  event.preventDefault(btnCancel);
+  newForm.classList.add("collapsed");
+  
+})
   
 
   

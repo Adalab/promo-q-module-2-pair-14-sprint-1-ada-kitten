@@ -104,6 +104,7 @@ const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
 const labelMesageError = document.querySelector('.js-label-error');
 
+
  btnAdd.addEventListener("click", (event)=> {
   event.preventDefault(btnAdd);
   const valueDesc = inputDesc.value;
@@ -123,17 +124,13 @@ const reset = document.querySelector(".js-form");
 
 btnCancel.addEventListener("click", (event)=>{
   event.preventDefault(btnCancel);
-  newForm.classList.add("collapsed");
-  
+  newForm.classList.add("collapsed")
+  inputDesc.value = "";
+  inputPhoto.value = "";
+  inputName.value = "";
 })
 
-//Hay que usar los elementos.value y darles valor vacio
 
-btnCancel.addEventListener("click", (e) => {
-e.preventDefault(btnCancel);
-  document.getElementsByClassName("js-form").reset();
-}
-)
  //Aqui hay que poner condicionales dentro de la función para que cierre o abra un mismo elemento
 
 function showNewCatForm() {

@@ -92,10 +92,10 @@ if( cat1Description.includes(descrSearchText) ) {
 
  const icon= document.querySelector(".js-icon");
  
- icon.addEventListener( "click" , (event) => {
-  event.preventDefault(icon); 
-  newForm.classList.remove("collapsed");
- } )
+ //icon.addEventListener( "click" , (event) => {
+  //event.preventDefault(icon); 
+  //newForm.classList.remove("collapsed");
+ //} )
 
 
 const btnAdd = document.querySelector(".js-btn-add");
@@ -103,6 +103,7 @@ const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
 const labelMesageError = document.querySelector('.js-label-error');
+
 
  btnAdd.addEventListener("click", (event)=> {
   event.preventDefault(btnAdd);
@@ -119,10 +120,29 @@ const labelMesageError = document.querySelector('.js-label-error');
  })
 
 const btnCancel = document.querySelector(".js-btn-cancel");
+const reset = document.querySelector(".js-form");
 
 btnCancel.addEventListener("click", (event)=>{
   event.preventDefault(btnCancel);
-  newForm.classList.add("collapsed");
+  newForm.classList.add("collapsed")
+  inputDesc.value = "";
+  inputPhoto.value = "";
+  inputName.value = "";
 })
+
+
+ //Aqui hay que poner condicionales dentro de la función para que cierre o abra un mismo elemento
+
+function showNewCatForm() {
+  newForm.classList.remove("collapsed");
   
-  
+}
+icon.addEventListener('click', showNewCatForm);
+
+
+function hideNewCatForm() {
+  newForm.classList.add("collapsed");
+}
+icon.addEventListener('click', showNewCatForm);
+
+ 

@@ -29,32 +29,32 @@ if (cat1Race === "") { html="No se ha especificado la raza";
   html = cat1Race;
 }
 
-const cat1 = `<li class="card">
-<article>
-  <img 
-    class="card_img"
-    src= ${cat1Url} 
-    alt="gatito"
-  />
-  <h3 class="card_title">${cat1Name}</h3>
-  <h4 class="card_race">${html}</h4>
-  <p class="card_description">
-    ${cat1Description}
-  </p>
-</article>
-</li>`;
+// const cat1 = `<li class="card">
+// <article>
+//   <img 
+//     class="card_img"
+//     src= ${cat1Url} 
+//     alt="gatito"
+//   />
+//   <h3 class="card_title">${cat1Name}</h3>
+//   <h4 class="card_race">${html}</h4>
+//   <p class="card_description">
+//     ${cat1Description}
+//   </p>
+// </article>
+// </li>`;
 
-const cat2 = `<li class="card">
-<img
-  class="card_img"
-  src=${cat2Url}
-  alt="gatito"
-/>
-<h3 class="card_title">${cat2Name}</h3>
-<h4 class="card_race">${cat2Race}</h4>
-<p class="card_description">${cat2Description}
-</p>
-</li>`;
+// const cat2 = `<li class="card">
+// <img
+//   class="card_img"
+//   src=${cat2Url}
+//   alt="gatito"
+// />
+// <h3 class="card_title">${cat2Name}</h3>
+// <h4 class="card_race">${cat2Race}</h4>
+// <p class="card_description">${cat2Description}
+// </p>
+// </li>`;
 
 const cat3= `<li class="card">
 <img
@@ -69,7 +69,7 @@ ${cat3Description}
 </p>
 </li>`;
 
-newList.innerHTML = cat1 + cat2 + cat3; 
+//newList.innerHTML = cat1 + cat2 + cat3; 
 //newList.innerHTML += cat2;
 //newList.innerHTML += cat3;
 
@@ -131,18 +131,70 @@ btnCancel.addEventListener("click", (event)=>{
 })
 
 
- //Aqui hay que poner condicionales dentro de la función para que cierre o abra un mismo elemento
+
 
 function showNewCatForm() {
-  newForm.classList.remove("collapsed");
+  newForm.classList.toggle("collapsed");
   
 }
+
 icon.addEventListener('click', showNewCatForm);
 
 
-function hideNewCatForm() {
-  newForm.classList.add("collapsed");
+
+const kittenData_1 = {
+  image: 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg',
+  name: 'Anastacio',
+  desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+  race: 'British Shorthair',
+};
+
+function renderKitten (kittenData){
+  const listCat1 = `<li class="card">
+<article>
+  <img 
+    class="card_img"
+    src= ${kittenData_1.image} 
+    alt="gatito"
+  />
+  <h3 class="card_title">${kittenData_1.name}</h3>
+  <h4 class="card_race">${kittenData_1.race}</h4>
+  <p class="card_description">
+    ${kittenData_1.desc}
+  </p>
+</article>
+</li>`;
+return newList.innerHTML = listCat1;
 }
-icon.addEventListener('click', showNewCatForm);
 
+renderKitten (kittenData_1);
+
+const kittenData_2 = {
+  image: 'https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg',
+  name: 'Fiona',
+  desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+  race: 'British Shorthair',
+};
+
+function renderKitten2 (kittenData){
+  const listCat2 = `<li class="card">
+<article>
+  <img 
+    class="card_img"
+    src= ${kittenData_2.image} 
+    alt="gatito"
+  />
+  <h3 class="card_title">${kittenData_2.name}</h3>
+  <h4 class="card_race">${kittenData_2.race}</h4>
+  <p class="card_description">
+    ${kittenData_2.desc}
+  </p>
+</article>
+</li>`;
+return newList.innerHTML += listCat2;
+}
+
+renderKitten2 (kittenData_2);
  
+
+

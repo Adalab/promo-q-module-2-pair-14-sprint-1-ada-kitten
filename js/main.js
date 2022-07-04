@@ -123,7 +123,6 @@ const btnCancel = document.querySelector(".js-btn-cancel");
 btnCancel.addEventListener("click", (event)=>{
   event.preventDefault(btnCancel);
   newForm.classList.add("collapsed");
-  
 })
   
   
